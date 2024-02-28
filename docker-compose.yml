@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  app-php-cli:
+    build:
+      context: api/docker
+      dockerfile: dev/php-cli/Dockerfile
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+      DB_HOST: localhost:5432
+      DB_USER: postgres
+    volumes:
+      - ./api:/app
